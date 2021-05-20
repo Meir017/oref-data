@@ -26,6 +26,7 @@ export async function syncData(newData: DataItem[], filename: string) {
     console.info(`updating from ${before} to ${after} items`);
 
     if (after > before) {
+        console.info(`adding ${after - before} items`);
         await writeJSON(filename, data)
     }
 }
