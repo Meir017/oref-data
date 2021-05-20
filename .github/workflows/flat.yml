@@ -16,6 +16,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=he&mode=0
+          http_url: https://www.oref.org.il/Shared/Ajax/GetAlarmsHistory.aspx?lang=he&mode=0
           downloaded_filename: temp-data.json
           postprocess: ./postprocess.ts
