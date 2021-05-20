@@ -13,6 +13,7 @@ jobs:
         uses: denolib/setup-deno@v2
       - name: Check out repo
         uses: actions/checkout@v2
+      - run: curl https://www.oref.org.il/Shared/Ajax/GetAlarmsHistory.aspx?lang=he&mode=0 --verbose
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
