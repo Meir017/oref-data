@@ -19,16 +19,15 @@ export async function syncData(newData: DataItem[], filename: string) {
 
     const after = data.length;
 
-    // Pluck a specific key off
-    // and write it out to a different file
-    // Careful! any uncaught errors and the workflow will fail, committing nothing.
+    if (before === after) {
+        console.info('nothing to add');
+        return;
+    }
 
     console.info(`updating from ${before} to ${after} items`);
 
-    if (after > before) {
-        console.info(`adding ${after - before} items`);
-        await writeJSON(filename, data)
-    }
+    console.info(`adding ${after - before} items`);
+    await writeJSON(filename, data)
 }
 
 export async function readDataFile(file: string) {
