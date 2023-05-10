@@ -1,4 +1,4 @@
-import { readJSON, writeJSON } from 'https://deno.land/x/flat/mod.ts'
+import { readJSON, writeJSON } from 'https://deno.land/x/flat@0.0.14/mod.ts'
 
 interface DataItem {
     data: string;
