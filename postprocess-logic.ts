@@ -5,6 +5,7 @@ interface DataItem {
     date: string;
     time: string;
     datetime: string | Date;
+    alertDate?: string | Date;
 }
 
 export async function syncData(newData: DataItem[], filename: string) {
@@ -37,5 +38,8 @@ export async function readDataFile(file: string) {
 }
 
 export function normalizeData(data: DataItem[]) {
-    data.forEach(item => item.datetime = new Date(item.datetime))
+    data.forEach(item => {
+        item.datetime = new Date(item.datetime || item.alertDate!);
+        delete item.alertDate;
+    });
 }
