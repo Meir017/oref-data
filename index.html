@@ -18,7 +18,13 @@
             var options = {
                 title: 'Alerts count',
                 curveType: 'function',
-                legend: { position: 'bottom' }
+                legend: { position: 'bottom' },
+                explorer: {
+                    actions: ['dragToZoom', 'rightClickToReset'],
+                    axis: 'horizontal',
+                    keepInBounds: true,
+                    maxZoomIn: 16.0
+                }
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
